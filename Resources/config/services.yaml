@@ -1,0 +1,9 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    Sidus\MenuBundle\:
+        resource: '../../'
+        exclude: '../../{Debug,DependencyInjection,Entity,Model}'

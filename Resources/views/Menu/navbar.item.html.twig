@@ -1,0 +1,15 @@
+{# @var menuItem \Sidus\MenuBundle\Model\MenuItem #}
+{% if is_granted('display', menuItem) %}
+    {% set current = app.request.attributes.get('_route') == menuItem.path %}
+    <li class="nav-item">
+        {% set attributes = menuItem.attributes({
+            'class': 'nav-link '~(not menuItem.path ? 'disabled')~' '~(current ? 'active'),
+            'href': menuItem.path ? path(menuItem.path) : '#',
+        }) %}
+        <a {% for attribute,value in attributes %}{{ attribute }}="{{ value|escape('html_attr') }}"{% endfor %}>
+            {% if menuItem.icon %}<i class="fas {{ menuItem.icon }}"></i>{{ menuItem.title ? '&nbsp;' }}{% endif %}
+            {{ menuItem.title }}
+            {% if current %}<span class="sr-only">(current)</span>{% endif %}
+        {{ '</a>' }}{# This fixes an issue with PHP inspections #}
+    </li>
+{% endif %}

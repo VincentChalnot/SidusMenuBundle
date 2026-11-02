@@ -1,0 +1,27 @@
+{
+    "name": "sidus/menu-bundle",
+    "description": "Configure static and dynamic menus in your Symfony application",
+    "keywords": [
+        "menu",
+        "symfony"
+    ],
+    "homepage": "https://github.com/VincentChalnot/SidusMenuBundle",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vincent Chalnot",
+            "homepage": "https://github.com/VincentChalnot",
+            "role": "Developer"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Sidus\\MenuBundle\\": ""
+        }
+    },
+    "require": {
+        "php": ">=8.1",
+        "symfony/event-dispatcher": ">=6.3"
+    }
+}

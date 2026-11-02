@@ -1,0 +1,8 @@
+{# @var menu \Sidus\MenuBundle\Model\Menu #}
+{% apply spaceless %}
+    <ul class="navbar-nav {{ menu.option('class') }}">
+        {% for menuItem in menu.menuItems %}
+            {{ sidus_menu_item(menuItem) }}
+        {% endfor %}
+    </ul>
+{% endapply %}
